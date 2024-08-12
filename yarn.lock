@@ -2145,6 +2145,11 @@
   dependencies:
     "@sinonjs/commons" "^3.0.0"
 
+"@types/geojson@^7946.0.13":
+  version "7946.0.14"
+  resolved "https://registry.npmjs.org/@types/geojson/-/geojson-7946.0.14.tgz"
+  integrity sha512-WCfD5Ht3ZesJUsONdhvm84dmzWOiOzOAqOncN0++w0lBw1o8OuDNJF2McvvCef/yBqb/HYRahp1BYtODFQ8bRg==
+
 "@types/hammerjs@^2.0.36":
   version "2.0.45"
   resolved "https://registry.npmjs.org/@types/hammerjs/-/hammerjs-2.0.45.tgz"
@@ -3519,6 +3524,11 @@ expo-keep-awake@~13.0.2:
   version "13.0.2"
   resolved "https://registry.npmjs.org/expo-keep-awake/-/expo-keep-awake-13.0.2.tgz"
   integrity sha512-kKiwkVg/bY0AJ5q1Pxnm/GvpeB6hbNJhcFsoOWDh2NlpibhCLaHL826KHUM+WsnJRbVRxJ+K9vbPRHEMvFpVyw==
+
+expo-location@^17.0.1:
+  version "17.0.1"
+  resolved "https://registry.npmjs.org/expo-location/-/expo-location-17.0.1.tgz"
+  integrity sha512-m+OzotzlAXO3ZZ1uqW5GC25nXW868zN+ROyBA1V4VF6jGay1ZEs4URPglCVUDzZby2F5wt24cMzqDKw2IX6nRw==
 
 expo-media-library@^16.0.4:
   version "16.0.4"
@@ -5848,6 +5858,13 @@ react-is@^17.0.1:
     lodash "^4.17.21"
     prop-types "^15.7.2"
 
+react-native-maps@^1.17.3:
+  version "1.17.3"
+  resolved "https://registry.npmjs.org/react-native-maps/-/react-native-maps-1.17.3.tgz"
+  integrity sha512-LMp42EQ55QbIhR0LXJCm12OQ34SwhQaSPgeaWbJ8pRgllfEW/XMJ5IFYhfWUXPFQWXn1q/F74KUS+wLhySdfnw==
+  dependencies:
+    "@types/geojson" "^7946.0.13"
+
 "react-native-reanimated@>= 1.0.0", react-native-reanimated@~3.10.1:
   version "3.10.1"
   resolved "https://registry.npmjs.org/react-native-reanimated/-/react-native-reanimated-3.10.1.tgz"
@@ -5875,7 +5892,7 @@ react-is@^17.0.1:
     react-freeze "^1.0.0"
     warn-once "^0.1.0"
 
-react-native@*, react-native@0.74.5:
+react-native@*, "react-native@>= 0.64.3", react-native@0.74.5:
   version "0.74.5"
   resolved "https://registry.npmjs.org/react-native/-/react-native-0.74.5.tgz"
   integrity sha512-Bgg2WvxaGODukJMTZFTZBNMKVaROHLwSb8VAGEdrlvKwfb1hHg/3aXTUICYk7dwgAnb+INbGMwnF8yeAgIUmqw==
@@ -5939,7 +5956,7 @@ react-shallow-renderer@^16.15.0:
     object-assign "^4.1.1"
     react-is "^16.12.0 || ^17.0.0 || ^18.0.0"
 
-react@*, "react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", react@^18.0, react@>=16.8, react@>=17.0.0, react@18.2.0:
+react@*, "react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", react@^18.0, "react@>= 17.0.1", react@>=16.8, react@>=17.0.0, react@18.2.0:
   version "18.2.0"
   resolved "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
   integrity sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==
