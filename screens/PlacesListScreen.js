@@ -1,11 +1,16 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { StyleSheet, Text, View,Platform, FlatList } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
 import PlaceItem from '../components/PlaceItem';
 import Colors from '../constents/Colors';
+import * as placesActions from '../store/places-actions';
 const PlacesListScreen= ({navigation}) =>{
     const places = useSelector(state => state.places.places);
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(placesActions.loadPlaces());
+    }, [dispatch]);
     React.useLayoutEffect(() => {
        
         navigation.setOptions({
