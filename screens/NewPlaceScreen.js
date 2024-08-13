@@ -12,6 +12,7 @@ const NewPlaceScreen = () => {
     const [titleValue, setTitleValue] = useState('');
     const [selectedImage, setSelectedImage] = useState();
     const [pickedLocation, setPickedLocation] = useState();
+ 
     const dispatch = useDispatch();
     const navigation = useNavigation();
    
