@@ -1,6 +1,6 @@
 import React from 'react';
-import { useRoute, useNavigation } from '@react-navigation/native';
-import {ScrollView,Imagem, StyleSheet, Text, View ,Button, Image} from 'react-native';
+import { useRoute} from '@react-navigation/native';
+import {ScrollView, StyleSheet, Text, View , Image} from 'react-native';
 import Colors from '../constents/Colors';
 import MapPreview from '../components/MapPreview';
 import { useSelector } from 'react-redux';
