@@ -20,7 +20,13 @@ const PlaceDetailScreen= ({navigation}) =>{
           
         });
       }, [navigation]);
-     const showMapHandler=()=>{};
+      const selectedLocation={lat:selectedPlace.lat,lng:selectedPlace.lng};
+     const showMapHandler=()=>{
+         navigation.navigate('Map', {
+          readonly: true,
+          initialLocation: selectedLocation
+        });
+     };
       return (
         <ScrollView contentContainerStyle={{ alignItems: 'center' }}>
        
@@ -32,7 +38,8 @@ const PlaceDetailScreen= ({navigation}) =>{
             </View>
             <MapPreview
               style={styles.mapPreview}
-              location={{lat:selectedPlace.lat,lng:selectedPlace.lng}}
+              location={selectedLocation}
+              onPress={showMapHandler}
              
             />
           </View>

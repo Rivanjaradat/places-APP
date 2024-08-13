@@ -2,17 +2,20 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Platform } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 import Colors from '../constents/Colors';
+import { useRoute, useNavigation } from '@react-navigation/native';
 
-const MapScreen = ({ route, navigation }) => {
-  const { initialLocation = { lat: 31.888363440411652, lng: 35.206599871088855 }, readonly = false } = route.params || {};
+const MapScreen = ({ navigation }) => {
+  const route = useRoute();
+  const{initialLocations,readonly}=route.params?route.params:{locations:null,readonly:false};
+ 
 
-  const [selectedLocation, setSelectedLocation] = useState(initialLocation);
+  const [selectedLocation, setSelectedLocation] = useState(initialLocations);
 
   const mapRegion = {
-    latitude: initialLocation.lat,
-    longitude: initialLocation.lng,
+    latitude:initialLocations? initialLocations.lat:31.88836,
+    longitude: initialLocations?initialLocations.lng:35.2065,
     latitudeDelta: 0.0922,
-    longitudeDelta: 0.0421
+    longitudeDelta: 0.0421,
   };
 
   const selectLocationHandler = event => {
@@ -21,7 +24,7 @@ const MapScreen = ({ route, navigation }) => {
     }
     setSelectedLocation({
       lat: event.nativeEvent.coordinate.latitude,
-      lng: event.nativeEvent.coordinate.longitude
+      lng: event.nativeEvent.coordinate.longitude,
     });
   };
 
@@ -40,7 +43,7 @@ const MapScreen = ({ route, navigation }) => {
             <Text style={styles.headerButtonText}>Save</Text>
           </TouchableOpacity>
         )
-      )
+      ),
     });
   }, [navigation, savePickedLocationHandler, readonly]);
 
@@ -49,7 +52,7 @@ const MapScreen = ({ route, navigation }) => {
   if (selectedLocation) {
     markerCoordinates = {
       latitude: selectedLocation.lat,
-      longitude: selectedLocation.lng
+      longitude: selectedLocation.lng,
     };
   }
 
@@ -68,15 +71,15 @@ const MapScreen = ({ route, navigation }) => {
 
 const styles = StyleSheet.create({
   map: {
-    flex: 1
+    flex: 1,
   },
   headerButton: {
-    marginHorizontal: 20
+    marginHorizontal: 20,
   },
   headerButtonText: {
     fontSize: 16,
-    color: Platform.OS === 'android' ? 'white' : Colors.primary
-  }
+    color: Platform.OS === 'android' ? 'white' : Colors.primary,
+  },
 });
 
 export default MapScreen;
